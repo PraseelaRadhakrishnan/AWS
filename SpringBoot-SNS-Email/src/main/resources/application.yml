@@ -1,0 +1,11 @@
+server:
+  port: 8085
+
+cloud:
+  aws:
+    region:
+      static: ap-south-1
+      auto: false
+    credentials:
+      access-key: <--Your access key here-->
+      secret-key: <--Your secret key here-->
