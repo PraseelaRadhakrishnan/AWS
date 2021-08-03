@@ -11,11 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Input {
 
-	/*
-	 * private String correlationId; private String customerName; private String
-	 * orderNumber; private String warehouse;
-	 */
-	
 	private String name;
 	private String place;
 	private int age;
