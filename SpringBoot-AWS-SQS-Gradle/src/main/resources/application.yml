@@ -7,7 +7,7 @@ cloud:
       static: ap-south-1
       auto: false
     credentials:
-      access-key: *****
-      secret-key: ****
+      access-key: AKIARGQCQOPJUUEOM6WF
+      secret-key: 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
     end-point:
-      uri: *****
+      uri: https://sqs.ap-south-1.amazonaws.com/082683392979/springBoot-sqs-queue

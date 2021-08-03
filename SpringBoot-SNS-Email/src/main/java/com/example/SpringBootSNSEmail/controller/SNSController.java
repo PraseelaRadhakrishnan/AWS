@@ -17,7 +17,7 @@ public class SNSController {
 
     private static final Logger log = LoggerFactory.getLogger(SNSController.class);
     // Topic arn. You are free to choose their topic arn.
-    private static final String TOPIC_ARN = "<--Your ARN Topic here-->";
+    private static final String TOPIC_ARN = "arn:aws:sns:ap-south-1:082683392979:springBoot-sns-topic";
 
     @Autowired
     private AmazonSNSClient amazonSNSClient;

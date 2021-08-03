@@ -1,39 +1,34 @@
-plugins {
-	id 'org.springframework.boot' version '2.3.7.BUILD-SNAPSHOT'
-	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
-	id 'java'
+buildscript {
+	ext {
+		springBootVersion = '2.1.6.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
 }
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '1.11'
 
 repositories {
 	mavenCentral()
-	maven { url 'https://repo.spring.io/milestone' }
-	maven { url 'https://repo.spring.io/snapshot' }
-}
-
-ext {
-	set('springCloudVersion', "Hoxton.BUILD-SNAPSHOT")
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.cloud:spring-cloud-starter-aws'
-	implementation 'org.springframework.cloud:spring-cloud-starter-aws-messaging'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.5.RELEASE'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws-messaging', version: '2.2.5.RELEASE'
+	testCompile group: 'junit', name: 'junit', version: '4.12'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
 
-dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-	}
-}
-
-test {
-	useJUnitPlatform()
-}
