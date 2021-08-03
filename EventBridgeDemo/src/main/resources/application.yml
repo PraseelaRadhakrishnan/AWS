@@ -1,0 +1,15 @@
+server:
+  port: 8081
+cloud:
+  aws:
+    region:
+      static: us-east-1
+    stack:
+      auto: false
+    sqs:
+      queue-name: test-eventBridge-queue
+    eventbridge:
+      source: com.sample.in
+      detail-type: Sample Data
+      bus-name: test-event-bus
+     
